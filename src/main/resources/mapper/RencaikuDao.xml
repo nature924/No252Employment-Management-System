@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.RencaikuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.RencaikuEntity" id="rencaikuMap">
+        <result property="biaotimingcheng" column="biaotimingcheng"/>
+        <result property="xueshengzhanghao" column="xueshengzhanghao"/>
+        <result property="xueshengxingming" column="xueshengxingming"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="nianling" column="nianling"/>
+        <result property="jiguan" column="jiguan"/>
+        <result property="lianxifangshi" column="lianxifangshi"/>
+        <result property="zhaopian" column="zhaopian"/>
+        <result property="zhuanye" column="zhuanye"/>
+        <result property="xueli" column="xueli"/>
+        <result property="qiwanggangwei" column="qiwanggangwei"/>
+        <result property="qiwangxinzi" column="qiwangxinzi"/>
+        <result property="huojiangzhengshu" column="huojiangzhengshu"/>
+        <result property="gerenziliao" column="gerenziliao"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.RencaikuVO" >
+		SELECT * FROM rencaiku  rencaiku         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.RencaikuVO" >
+		SELECT  rencaiku.* FROM rencaiku  rencaiku 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.RencaikuView" >
+
+		SELECT  rencaiku.* FROM rencaiku  rencaiku 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.RencaikuView" >
+		SELECT * FROM rencaiku  rencaiku <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.JianlitoudiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.JianlitoudiEntity" id="jianlitoudiMap">
+        <result property="gangweimingcheng" column="gangweimingcheng"/>
+        <result property="gongzuodidian" column="gongzuodidian"/>
+        <result property="xinzidaiyu" column="xinzidaiyu"/>
+        <result property="xingyeleixing" column="xingyeleixing"/>
+        <result property="xueliyaoqiu" column="xueliyaoqiu"/>
+        <result property="zhaopinrenshu" column="zhaopinrenshu"/>
+        <result property="qiyezhanghao" column="qiyezhanghao"/>
+        <result property="qiyemingcheng" column="qiyemingcheng"/>
+        <result property="qiyeleixing" column="qiyeleixing"/>
+        <result property="lianxidianhua" column="lianxidianhua"/>
+        <result property="xueshengzhanghao" column="xueshengzhanghao"/>
+        <result property="xueshengxingming" column="xueshengxingming"/>
+        <result property="lianxifangshi" column="lianxifangshi"/>
+        <result property="gerenziliao" column="gerenziliao"/>
+        <result property="touxiang" column="touxiang"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.JianlitoudiVO" >
+		SELECT * FROM jianlitoudi  jianlitoudi         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.JianlitoudiVO" >
+		SELECT  jianlitoudi.* FROM jianlitoudi  jianlitoudi 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.JianlitoudiView" >
+
+		SELECT  jianlitoudi.* FROM jianlitoudi  jianlitoudi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.JianlitoudiView" >
+		SELECT * FROM jianlitoudi  jianlitoudi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
